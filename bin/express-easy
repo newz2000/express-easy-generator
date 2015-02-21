@@ -131,7 +131,10 @@ function createApplication(app_name, path) {
         name: app_name
       , version: '0.0.0'
       , private: true
-      , scripts: { start: 'node ./bin/www' }
+      , scripts: { 
+        start: 'node ./bin/www',
+        test: 'mocha -u tdd'
+      }
       , dependencies: {
           'express-easy': '~0.1.1'
       }

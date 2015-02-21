@@ -78,10 +78,14 @@ function createApplication(app_name, path) {
     if (--wait) return;
     console.log();
     console.log('   install dependencies:');
-    console.log('     $ cd %s && npm install', path);
+    console.log('     $ cd %s', path);
+    console.log('     $ npm install');
     console.log();
     console.log('   run the app:');
     console.log('     $ npm start');
+    console.log();
+    console.log('   run the tests:');
+    console.log('     $ npm test');
     console.log();
   }
 
@@ -90,6 +94,7 @@ function createApplication(app_name, path) {
   var www = loadTemplate('js/www');
   var routes = loadTemplate('js/routes.js');
   var main = loadTemplate('js/main.js');
+  var test = loadTemplate('js/test-routes.js');
 
   // CSS
   var css = loadTemplate('css/style.css');
@@ -116,6 +121,11 @@ function createApplication(app_name, path) {
       complete();
     });
 
+    mkdir(path + '/test', function(){
+      copy_template('test/test-routes.js', path + '/test/test-routes.js');
+      complete();
+    })
+
     // package.json
     var pkg = {
         name: app_name
@@ -124,6 +134,12 @@ function createApplication(app_name, path) {
       , scripts: { start: 'node ./bin/www' }
       , dependencies: {
           'express-easy': '~0.1.1'
+      }
+      , devDependencies: {
+        'chai': '^1.10.0',
+        'mocha': '^2.0.1',
+        'sinon': '^1.12.1',
+        'sinon-chai': '^2.6.0'
       }
     }
 

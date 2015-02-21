@@ -89,6 +89,7 @@ function createApplication(app_name, path) {
   var app = loadTemplate('js/app.js');
   var www = loadTemplate('js/www');
   var routes = loadTemplate('js/routes.js');
+  var main = loadTemplate('js/main.js');
 
   // CSS
   var css = loadTemplate('css/style.css');
@@ -96,7 +97,10 @@ function createApplication(app_name, path) {
 
   mkdir(path, function(){
     mkdir(path + '/public');
-    mkdir(path + '/public/javascripts');
+    mkdir(path + '/public/javascripts', function(){
+      write(path + '/public/javascripts/main.js', main);
+      complete();
+    });
     mkdir(path + '/public/images');
     mkdir(path + '/public/stylesheets', function(){
       write(path + '/public/stylesheets/style.less', less);

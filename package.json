@@ -1,9 +1,10 @@
 {
-  "name": "express-generator",
-  "description": "Express' application generator",
-  "version": "4.11.2",
-  "author": "TJ Holowaychuk <tj@vision-media.ca>",
+  "name": "express-easy-generator",
+  "description": "Express-easy application generator",
+  "version": "0.1.0",
+  "author": "Matthew Nuzum <newz@bearfruit.org>",
   "contributors": [
+    "TJ Holowaychuk <tj@vision-media.ca>",
     "Aaron Heckmann <aaron.heckmann+github@gmail.com>",
     "Ciaran Jessup <ciaranj@gmail.com>",
     "Douglas Christopher Wilson <doug@somethingdoug.com>",
@@ -12,6 +13,7 @@
     "Roman Shtylman <shtylman+expressjs@gmail.com>"
   ],
   "keywords": [
+    "express-easy",
     "express",
     "framework",
     "sinatra",
@@ -22,7 +24,7 @@
     "app",
     "api"
   ],
-  "repository": "expressjs/generator",
+  "repository": "newz2000/express-easy-generator",
   "license": "MIT",
   "dependencies": {
     "commander": "2.6.0",
@@ -32,12 +34,10 @@
   "main": "bin/express",
   "preferGlobal": true,
   "bin": {
-    "express": "./bin/express"
+    "express-easy": "./bin/express-easy"
   },
   "devDependencies": {
-    "mocha": "~2.1.0",
-    "rimraf": "~2.2.8",
-    "supertest": "~0.15.0"
+    "mocha": "~2.1.0"
   },
   "engines": {
     "node": ">= 0.10"
@@ -48,7 +48,6 @@
     "templates/"
   ],
   "scripts": {
-    "test": "mocha --reporter spec --bail --check-leaks test/",
-    "test-ci": "mocha --reporter spec --check-leaks test/"
+    "test": "mocha --reporter spec --bail --check-leaks test/"
   }
 }

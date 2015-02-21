@@ -122,7 +122,7 @@ function createApplication(app_name, path) {
     });
 
     mkdir(path + '/test', function(){
-      copy_template('test/test-routes.js', path + '/test/test-routes.js');
+      copy_template('js/test-routes.js', path + '/test/test-routes.js');
       complete();
     })
 

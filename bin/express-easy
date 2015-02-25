@@ -115,9 +115,9 @@ function createApplication(app_name, path) {
     write(path + '/routes.js', routes);
 
     mkdir(path + '/views', function(){
-      copy_template('hbs/index.hbs', path + '/views/index.hbs');
-      copy_template('hbs/layout.hbs', path + '/views/layout.hbs');
-      copy_template('hbs/error.hbs', path + '/views/error.hbs');
+      copy_template('hbs/index.html', path + '/views/index.html');
+      copy_template('hbs/layout.html', path + '/views/layout.html');
+      copy_template('hbs/error.html', path + '/views/error.html');
       complete();
     });
 
